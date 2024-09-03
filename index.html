@@ -76,15 +76,15 @@
 
         /* Center images in their containers */
         .image-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
+            width: 100vw; /* Full viewport width */
+            overflow: hidden; /* Hide overflow */
         }
 
         .image-container img {
-            max-width: 100%;
-            height: auto;
+            width: 100vw; /* Make image cover full width */
+            height: auto; /* Maintain aspect ratio */
             display: block;
+            object-fit: cover; /* Ensure the image covers the container */
         }
 
         @media (max-width: 768px) {
@@ -148,4 +148,3 @@
 
 </body>
 </html>
-
