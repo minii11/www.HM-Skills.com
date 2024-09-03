@@ -14,6 +14,7 @@
 
         body {
             background-color: #f9f9f9;
+            font-size: 16px;
         }
 
         header {
@@ -65,20 +66,52 @@
             background-color: #575757;
         }
 
-        .main-content {
-            margin-top: 20px;
+        .container {
             padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: lightblack;
+            max-width: 100%;
+            box-sizing: border-box;
+            background-color: #fff;
+            margin-top: 60px; /* Adjust to account for fixed header */
         }
 
-        .section-content {
-            display: none;
-            padding: 20px;
-            text-align: center;
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: purple;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: purple;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
             font-size: 18px;
+            background-color: purple;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #5a2d8b;
         }
 
         @media (max-width: 768px) {
@@ -94,7 +127,7 @@
                 font-size: 16px;
             }
 
-            .main-content {
+            .container h2 {
                 font-size: 20px;
             }
         }
@@ -116,35 +149,35 @@
         <a href="dashboard.html">Dashboard</a>
         <a href="about.html">About</a>
     </div>
+
     <main class="container">
         <h2>Enter Your Information For Account Creation</h2>
-        <strong>Make Sure to enter correct information !  .</strong>
-        <form action="mailto: hafizmugees78@gmail.com" method="post" enctype="text/plain">
+        <strong>Make sure to enter correct information!</strong>
+        <form action="mailto:hafizmugees78@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="Email">Email:</label>
-                <input type="text" id="Email" name="Email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="Password">Password :</label>
-                <input type="text" id="Password" name="Password" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <label for="WhatsApp Number">WhatsApp Number:</label>
-                <input type="text" id="WhatsApp Number" name="WhatsApp Number" required>
+                <label for="whatsapp">WhatsApp Number:</label>
+                <input type="text" id="whatsapp" name="whatsapp" required>
             </div>
             <div class="form-group">
-                <label for="Transaction ID">Transaction ID:</label>
-                <input type="text" id="Transaction ID" name="Transaction ID" required>
+                <label for="transaction-id">Transaction ID:</label>
+                <input type="text" id="transaction-id" name="transaction-id" required>
             </div>
             <div class="form-group">
-                <label for="Refferal's Gmail">Refferal's Gmail:</label>
-                <input type="text" id="Refferal's Gmail" name="Refferal's Gmail" required>
+                <label for="referral-email">Referral's Email:</label>
+                <input type="email" id="referral-email" name="referral-email" required>
             </div>
-           
             <div class="form-group">
                 <button type="submit">Submit</button>
             </div>
@@ -164,6 +197,4 @@
 
 </body>
 </html>
-
-
 
