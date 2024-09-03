@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+        }
+
+        header h1 {
+            margin-left: 10px;
+            color: purple;
+            font-size: 24px;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: purple;
+        }
+
+        .sidebar {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #ffcc99; /* Light orange color */
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffcc99; /* Light orange color */
+            display: block;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .main-content {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: lightblack;
+        }
+
+        .section-content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            .menu-icon {
+                font-size: 25px;
+            }
+
+            .sidebar a {
+                font-size: 16px;
+            }
+
+            .main-content {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="image.png" alt="HM Skills Logo">
+        <h1>HM Skills</h1>
+        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="main-content" id="home">
+        Welcome to HM Skills
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar.style.display === "block") {
+                sidebar.style.display = "none";
+            } else {
+                sidebar.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

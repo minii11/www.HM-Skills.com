@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.menu-toggle {
+    font-size: 30px;
+    color: purple;
+    cursor: pointer;
+    display: none;
+}
+
+/* Sidebar styling */
+nav#sidebar {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 100;
+}
+
+nav#sidebar.active {
+    transform: translateX(0);
+}
+
+nav#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav#sidebar ul li {
+    padding: 15px;
+}
+
+nav#sidebar ul li a {
+    text-decoration: none;
+    color: lightorange;
+    font-size: 18px;
+    display: block;
+}
+
+/* Intro text styling */
+.intro-text {
+    margin: 20px;
+    text-align: center;
+}
+
+.intro-text h2 {
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav#sidebar {
+        width: 100%;
+        position: fixed;
+    }
+}
