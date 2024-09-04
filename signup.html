@@ -114,6 +114,14 @@
             background-color: #5a2d8b;
         }
 
+        /* Ensure images cover the entire mobile screen */
+        img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            display: block;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 20px;
@@ -129,6 +137,10 @@
 
             .container h2 {
                 font-size: 20px;
+            }
+
+            img {
+                height: 100vh;
             }
         }
     </style>
@@ -185,12 +197,12 @@
             </div>
         </form>
 
-            <!-- New section added below -->
-    <h2 style="font-weight: bold; text-align: center; margin-top: 20px;">HM Skills Courses</h2>
-    <div style="border: 2px dotted orange; padding: 20px; text-align: center; margin-top: 10px;">
-        <span style="font-size: 24px; font-weight: bold;">(5) Courses</span>  
-        <span style="font-size: 24px; font-weight: bold; color: orangered; margin-left: 10px;">RS:1200</span>
-    </div>
+        <!-- New section added below -->
+        <h2 style="font-weight: bold; text-align: center; margin-top: 20px;">HM Skills Courses</h2>
+        <div style="border: 2px dotted orange; padding: 20px; text-align: center; margin-top: 10px;">
+            <span style="font-size: 24px; font-weight: bold;">(5) Courses</span>  
+            <span style="font-size: 24px; font-weight: bold; color: orangered; margin-left: 10px;">RS:1200</span>
+        </div>
     </main>
 
     <script>
@@ -203,10 +215,8 @@
             }
         }
     </script>
-     <img src="./img 4.jpg" alt="">
-    </div>
 
-
+    <img src="./img 4.jpg" alt="">
 </body>
 </html>
 
