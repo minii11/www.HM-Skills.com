@@ -50,14 +50,14 @@
             left: 0;
             width: 100%;
             background-color: #333;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
         }
 
         .sidebar a {
             padding: 15px;
             text-decoration: none;
             font-size: 18px;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
             display: block;
             text-align: center;
         }
@@ -71,7 +71,7 @@
             max-width: 100%;
             box-sizing: border-box;
             background-color: #fff;
-            margin-top: 60px; /* Adjust to account for fixed header */
+            margin-top: 60px;
         }
 
         .container h2 {
@@ -114,12 +114,13 @@
             background-color: #5a2d8b;
         }
 
-        /* Ensure images cover the entire mobile screen */
+        /* Ensure images are centered and fully visible on mobile devices */
         img {
             width: 100%;
             height: 100vh;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -140,7 +141,7 @@
             }
 
             img {
-                height: 100vh;
+                height: auto;
             }
         }
     </style>
