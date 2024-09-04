@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HM Skills</title>
+    <title>Student Dashboard - Leaderboard</title>
     <style>
         * {
             margin: 0;
@@ -49,14 +49,14 @@
             left: 0;
             width: 100%;
             background-color: #333;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
         }
 
         .sidebar a {
             padding: 15px;
             text-decoration: none;
             font-size: 18px;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
             display: block;
             text-align: center;
         }
@@ -65,20 +65,53 @@
             background-color: #575757;
         }
 
-        .main-content {
-            margin-top: 20px;
+        .leaderboard {
+            max-width: 600px;
+            margin: 80px auto 0 auto;
+            background-color: #fff;
             padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: lightblack;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
-        .section-content {
-            display: none;
-            padding: 20px;
+        .leaderboard h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
             text-align: center;
+        }
+
+        .leaderboard .student-entry {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .leaderboard .student-entry img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .leaderboard .student-details {
+            color: #333;
+        }
+
+        .leaderboard .student-details h3 {
+            margin-bottom: 10px;
             font-size: 18px;
+            font-weight: bold;
+        }
+
+        .leaderboard .student-details p {
+            margin-bottom: 5px;
+            font-size: 16px;
         }
 
         @media (max-width: 768px) {
@@ -94,8 +127,8 @@
                 font-size: 16px;
             }
 
-            .main-content {
-                font-size: 20px;
+            .leaderboard {
+                margin-top: 100px;
             }
         }
     </style>
@@ -117,8 +150,42 @@
         <a href="about.html">About</a>
     </div>
 
-    <div class="main-content" id="home">
-        Welcome to Dashboard
+    <div class="leaderboard">
+        <h2>Student's Earnings & Withdrawals</h2>
+        
+    
+        <div class="student-entry">
+            <img src="student1.jpg" alt="Student Image">
+            <div class="student-details">
+                <h3>Mugees-HM Skills</h3>
+                <p>Available Earning: &nbsp RS 20,000</p>
+                <p>Total Earning:  &nbsp RS 50,000</p>
+                <p>Withdraw Received:  &nbsp RS 50,000</p>
+            </div>
+        </div>
+
+        <div class="student-entry">
+            <img src="student2.jpg" alt="Student Image">
+            <div class="student-details">
+                <h3>John Doe</h3>
+                <p>Available Earning:  &nbsp RS 150</p>
+                <p>Total Earning:  &nbsp RS 350</p>
+                <p>Withdraw Received:  &nbsp RS 1200</p>
+            </div>
+        </div>
+
+        <div class="student-entry">
+            <img src="student3.jpg" alt="Student Image">
+            <div class="student-details">
+                <h3>Jane Smith</h3>
+                <p>Available Earning:  &nbsp RS 200</p>
+                <p>Total Earning:  &nbsp RS 400</p>
+                <p>Withdraw Received: &nbsp RS 1300</p>
+            </div>
+        </div>
+
+        <!-- Add more student entries as needed -->
+
     </div>
 
     <script>
@@ -134,3 +201,4 @@
 
 </body>
 </html>
+
