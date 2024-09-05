@@ -23,45 +23,46 @@
             padding: 15px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%; /* Full width of the screen */
-            position: fixed; /* Keep the header fixed at the top */
+            width: 100%;
+            position: fixed;
             top: 0;
             left: 0;
-            z-index: 1000; /* Ensure the header stays on top */
+            z-index: 1000;
         }
 
         header img {
-            width: 70px; /* Size for the logo */
-            height: 70px; /* Size for the logo */
+            width: 70px;
+            height: 70px;
         }
 
         header h1 {
-            margin-left: 15px; /* Margin for spacing */
+            margin-left: 15px;
             color: purple;
-            font-size: 24px; /* Font size for the header */
+            font-size: 24px;
         }
 
         .menu-icon {
-            font-size: 40px; /* Font size for the menu icon */
+            font-size: 40px;
             cursor: pointer;
             color: purple;
         }
 
         .sidebar {
             display: none;
-            position: absolute;
-            top: 80px; /* Adjust to accommodate header */
+            position: fixed;
+            top: 80px;
             left: 0;
             width: 100%;
             background-color: #333;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
+            z-index: 999; /* Ensure sidebar stays above other content */
         }
 
         .sidebar a {
-            padding: 20px; /* Padding for sidebar links */
+            padding: 20px;
             text-decoration: none;
-            font-size: 20px; /* Font size for sidebar links */
-            color: #ffcc99; /* Light orange color */
+            font-size: 20px;
+            color: #ffcc99;
             display: block;
             text-align: center;
         }
@@ -71,42 +72,41 @@
         }
 
         .main-content {
-            margin-top: 100px; /* Adjust to ensure content isn't hidden under the header */
+            margin-top: 100px;
             padding: 20px;
             text-align: center;
-            font-size: 28px; /* Font size for main content */
+            font-size: 28px;
             font-weight: bold;
             color: lightblack;
         }
 
-        /* Center images in their containers */
         .image-container {
-            width: 100vw; /* Full viewport width */
-            overflow: hidden; /* Hide overflow */
+            width: 100vw;
+            overflow: hidden;
         }
 
         .image-container img {
-            width: 100vw; /* Make image cover full width */
-            height: auto; /* Maintain aspect ratio */
+            width: 100vw;
+            height: auto;
             display: block;
-            object-fit: cover; /* Ensure the image covers the container */
+            object-fit: cover;
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 28px; /* Adjust for mobile */
+                font-size: 28px;
             }
 
             .menu-icon {
-                font-size: 35px; /* Adjust for mobile */
+                font-size: 35px;
             }
 
             .sidebar a {
-                font-size: 18px; /* Adjust for mobile */
+                font-size: 18px;
             }
 
             .main-content {
-                font-size: 20px; /* Adjust for mobile */
+                font-size: 20px;
             }
         }
 
@@ -116,6 +116,7 @@
             margin: 0;
             padding: 20px;
         }
+
         .container {
             max-width: 600px;
             margin: auto;
@@ -124,19 +125,22 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             text-align: center;
             color: #333;
             font-size: 0.6em;
             margin-bottom: 20px;
         }
+
         h2 {
-            color: #D8BFD8; /* Light purple */
+            color: #D8BFD8;
             margin-top: 20px;
             font-size: 0.6em;
             border-bottom: 2px solid #D8BFD8;
             padding-bottom: 5px;
         }
+
         p {
             line-height: 1.6;
             color: #555;
@@ -165,27 +169,24 @@
     <div class="main-content" id="home">
         Welcome to HM Skills
 
-         <p style="font-size: 0.5em; line-height: 1.8; color: #4b0082; text-align: center; font-family: 'Georgia', serif;">
+        <p style="font-size: 0.5em; line-height: 1.8; color: #4b0082; text-align: center; font-family: 'Georgia', serif;">
             ⭐ <strong>Step into the world of <span style="color: #ff4500;">HM Skills</span>, where learning meets earning in perfect harmony!</strong> 📈 
             <br><br>
             <span style="font-style: calibar;">Elevate your abilities with our premium courses, unlock new opportunities, and watch your income flourish. 💼</span>
             <br><br>
-            Join us on this transformative journey of <strong>skill enhancement & financial success 🏆💰 </strong><span style="text-decoration: underline;"> </span>. 
+            Join us on this transformative journey of <strong>skill enhancement & financial success 🏆💰</strong>.
             <br><br>
             <strong>Let's make your dreams a reality with <span style="color: #ff4500;">HM Skills</span>!</strong> ✨
         </p>
 
+        <div class="image-container">
+            <img src="./img 1.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="./img 2.jpg" alt="">
+        </div>
 
- <!-- Image containers for centered images -->
-    <div class="image-container">
-        <img src="./img 1.jpg" alt="">
-    </div>
-    <div class="image-container">
-        <img src="./img 2.jpg" alt="">
-    </div>
-
-        
-        <h1> Plan for student's Earning</h1>
+        <h1>Plan for student's Earning</h1>
         
         <h2>1. Get Ads from Adsterra</h2>
         <p>We'll get cool ads from Adsterra for your blog on Blogger.</p>
@@ -208,34 +209,24 @@
         <h2>7. Double Earnings on TikTok</h2>
         <p>By sharing your vlogs and movies on TikTok, you can earn money from Adsterra. Also, by selling your course on TikTok, you can earn money through HM Skills.</p>
         
-    <br>
-           <strong> Exciting times ahead for you! </strong>
-
         <br>
-        <br>
-        
-       
+        <strong>Exciting times ahead for you!</strong>
+        <br><br>
     </div>
 
-<div style="text-align: center;">
-  
-
-
-    
-<strong> At HM Skills,</strong>
-   <br> <p>You're guaranteed top-notch training from industry-leading educators.</p>
-    <br><p>Transform your aspirations into reality with our expert instructors at the helm of your learning journey. </p>
-    <br><p>Witness your dreams materialize under the tutelage of LedasGuru's exceptional instructors.</p>    
-  
-  <div class="image-container">
-        <img src="./img 111.jpg" alt="">
+    <div style="text-align: center;">
+        <strong>At HM Skills,</strong>
+        <br><p>You're guaranteed top-notch training from industry-leading educators.</p>
+        <br><p>Transform your aspirations into reality with our expert instructors at the helm of your learning journey.</p>
+        <br><p>Witness your dreams materialize under the tutelage of LedasGuru's exceptional instructors.</p>    
+        <div class="image-container">
+            <img src="./img 111.jpg" alt="">
+        </div>
+        <strong>Mugees</strong>
+        <strong>President</strong>
+        <p>HM-skills</p>
+        <p>Contact:<a href="https://wa.me/923212161650">Chat on WhatsApp</a></p> 
     </div>
-    <strong>Mugees</strong> 
-<strong>President </strong>  <P>HM-skills</P>
-  
- <p>Contact:<a href="https://wa.me/923212161650">Chat on WhatsApp</a></p> 
-
-</div>
 
     <script>
         function toggleSidebar() {
@@ -250,3 +241,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
