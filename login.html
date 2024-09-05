@@ -188,17 +188,20 @@
             }
         }
 
+
+
+
         function validateKey() {
-            const key = document.getElementById("key").value;
-            const errorMessage = document.getElementById("error-message");
-            if (key === "HMSkills*12") {
-                alert("Congrats! You got access to the Courses Portal. Best of luck!");
-                document.body.innerHTML = "<h1 style='text-align:center;'>Welcome student</h1>";
-            } else {
-                errorMessage.style.display = "block";
-                alert("Dear Student! You have entered a wrong key. You can't get access to the Courses Portal. Ask admin to confirm your verification before proceeding and give you the Pass Key. Otherwise, You'll not be able to Login!");
-            }
-        }
+    const key = document.getElementById("key").value;
+    const errorMessage = document.getElementById("error-message");
+    if (key === "HMSkills*12") {
+        window.location.href = "welcome.html";
+    } else {
+        errorMessage.style.display = "block";
+        alert("Dear Student! You have entered a wrong key. You can't get access to the Courses Portal. Ask admin to confirm your verification before proceeding and give you the Pass Key. Otherwise, You'll not be able to Login!");
+    }
+}
+
     </script>
 
 </body>
