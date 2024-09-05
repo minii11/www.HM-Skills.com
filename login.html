@@ -14,6 +14,8 @@
 
         body {
             background-color: #f9f9f9;
+            text-align: center; /* Center all text */
+            font-size: 16px;
         }
 
         header {
@@ -23,25 +25,30 @@
             padding: 10px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         header img {
-            width: 100%;
-            height: auto;
-            max-width: 500px;
-            display: block;
+            width: 50px;
+            height: 50px;
+            margin-right: auto;
         }
 
         header h1 {
-            margin-left: 10px;
             color: purple;
             font-size: 24px;
+            flex-grow: 1;
         }
 
         .menu-icon {
             font-size: 30px;
             cursor: pointer;
             color: purple;
+            margin-left: auto;
         }
 
         .sidebar {
@@ -52,6 +59,7 @@
             width: 100%;
             background-color: #333;
             color: #ffcc99;
+            text-align: center;
         }
 
         .sidebar a {
@@ -60,7 +68,6 @@
             font-size: 18px;
             color: #ffcc99;
             display: block;
-            text-align: center;
         }
 
         .sidebar a:hover {
@@ -68,9 +75,8 @@
         }
 
         .main-content {
-            margin-top: 20px;
+            margin-top: 60px; /* Adjusted for fixed header */
             padding: 20px;
-            text-align: center;
             font-size: 24px;
             font-weight: bold;
             color: black;
@@ -78,25 +84,22 @@
 
         .login-form {
             padding: 20px;
-            text-align: center;
-            font-size: 18px;
             background-color: #e6e6fa; /* Light purple color */
             border-radius: 8px;
             max-width: 400px;
-            margin: 0 auto;
+            margin: 20px auto;
         }
 
         .login-form input {
             padding: 10px;
-            margin: 10px;
+            margin: 10px 0;
             font-size: 16px;
-            width: 80%;
-            max-width: 300px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
 
         .login-form .key-input {
@@ -111,8 +114,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            width: 80%;
-            max-width: 300px;
+            width: 100%;
         }
 
         .login-form button:hover {
@@ -124,6 +126,15 @@
             margin-top: 10px;
             font-weight: bold;
             display: none;
+        }
+
+        /* Ensure images are centered and fully visible on mobile devices */
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -141,10 +152,6 @@
 
             .main-content {
                 font-size: 20px;
-            }
-
-            header img {
-                max-width: 100%;
             }
         }
     </style>
@@ -169,9 +176,8 @@
     <div class="main-content" id="home">
         Login to HM Skills
     </div>
-       <div>
-    <img src="./img login.jpg" alt="">
-</div>
+
+    <img src="./img login.jpg" alt="Login Image">
 
     <div class="login-form">
         <input type="email" id="email" placeholder="Enter your Email">
@@ -191,20 +197,16 @@
             }
         }
 
-
-
-
         function validateKey() {
-    const key = document.getElementById("key").value;
-    const errorMessage = document.getElementById("error-message");
-    if (key === "HMSkills*12") {
-        window.location.href = "welcome.html";
-    } else {
-        errorMessage.style.display = "block";
-        alert("Dear Student! You have entered a wrong key. You can't get access to the Courses Portal. Ask admin to confirm your verification before proceeding and give you the Pass Key. Otherwise, You'll not be able to Login!");
-    }
-}
-
+            const key = document.getElementById("key").value;
+            const errorMessage = document.getElementById("error-message");
+            if (key === "HMSkills*12") {
+                window.location.href = "welcome.html";
+            } else {
+                errorMessage.style.display = "block";
+                alert("Dear Student! You have entered a wrong key. You can't get access to the Courses Portal. Ask admin to confirm your verification before proceeding and give you the Pass Key. Otherwise, You'll not be able to Login!");
+            }
+        }
     </script>
 
 </body>
