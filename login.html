@@ -26,8 +26,10 @@
         }
 
         header img {
-            width: 50px;
-            height: 50px;
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            display: block;
         }
 
         header h1 {
@@ -49,14 +51,14 @@
             left: 0;
             width: 100%;
             background-color: #333;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
         }
 
         .sidebar a {
             padding: 15px;
             text-decoration: none;
             font-size: 18px;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
             display: block;
             text-align: center;
         }
@@ -71,14 +73,57 @@
             text-align: center;
             font-size: 24px;
             font-weight: bold;
-            color: lightblack;
+            color: black;
         }
 
-        .section-content {
-            display: none;
+        .login-form {
             padding: 20px;
             text-align: center;
             font-size: 18px;
+            background-color: #e6e6fa; /* Light purple color */
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .login-form input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-form .key-input {
+            border: 2px solid red; /* Red outline for the key input box */
+        }
+
+        .login-form button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: orange; /* Orange login button */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .login-form button:hover {
+            background-color: darkorange;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
         }
 
         @media (max-width: 768px) {
@@ -97,13 +142,17 @@
             .main-content {
                 font-size: 20px;
             }
+
+            header img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="your-image.png" alt="HM Skills Logo">
+        <img src="img login.jpg" alt="HM Skills Logo">
         <h1>HM Skills</h1>
         <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
     </header>
@@ -118,7 +167,15 @@
     </div>
 
     <div class="main-content" id="home">
-        Welcome to HM Skills
+        Login to HM Skills
+    </div>
+
+    <div class="login-form">
+        <input type="email" id="email" placeholder="Enter your Email">
+        <input type="password" id="password" placeholder="Enter your Password">
+        <input type="text" id="key" placeholder="Enter the Key" class="key-input">
+        <button onclick="validateKey()">Login</button>
+        <div class="error-message" id="error-message">Login Failed! Retry with the correct Key to access the Courses Portal.</div>
     </div>
 
     <script>
@@ -128,6 +185,18 @@
                 sidebar.style.display = "none";
             } else {
                 sidebar.style.display = "block";
+            }
+        }
+
+        function validateKey() {
+            const key = document.getElementById("key").value;
+            const errorMessage = document.getElementById("error-message");
+            if (key === "HMSkills*12") {
+                alert("Congrats! You got access to the Courses Portal. Best of luck!");
+                document.body.innerHTML = "<h1 style='text-align:center;'>Welcome student</h1>";
+            } else {
+                errorMessage.style.display = "block";
+                alert("Dear Student! You have entered a wrong key. You can't get access to the Courses Portal. Ask admin to confirm your verification before proceeding and give you the Pass Key. Otherwise, You'll not be able to Login!");
             }
         }
     </script>
