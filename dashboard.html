@@ -50,6 +50,7 @@
             width: 100%;
             background-color: #333;
             color: #ffcc99;
+            z-index: 1000; /* Ensure sidebar stays on top */
         }
 
         .sidebar a {
@@ -189,18 +190,21 @@
         }
 
         .blurred-background {
-    color: #000000;
-    background: rgba(255,165,0,0.5);
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
+            color: #000000;
+            background: rgba(255,165,0,0.5);
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1; /* Ensure it's below the sidebar */
+        }
+
         .glowing-text {
-    color: black;
-    text-shadow: 0 0 10px purple;
-}
+            color: black;
+            text-shadow: 0 0 10px purple;
+        }
+
     </style>
 </head>
 <body>
@@ -220,8 +224,7 @@
         <a href="about.html">About</a>
     </div>
 
-    <p class="blurred-background"><p>Get ready to soar with HM-Skills!</p> <p>Our awesome instructors will have your back every step of the way.</p> <p>Achievers, it's time to cash in on your hard work – pop in your bank details and let the success roll in! 🚀💰</p> </p>
-
+    <p class="blurred-background">Get ready to soar with HM-Skills! Our awesome instructors will have your back every step of the way. Achievers, it's time to cash in on your hard work – pop in your bank details and let the success roll in! 🚀💰</p>
 
     <div class="form-container">
         <h2>Ask For Withdrawals</h2>
@@ -297,6 +300,10 @@
 
 </body>
 </html>
+
+
+
+
 
 
 
