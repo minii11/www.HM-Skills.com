@@ -114,6 +114,58 @@
             font-size: 16px;
         }
 
+        .form-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4b0082;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #4b0082;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: orange;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-group button:hover {
+            background-color: #e69500;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 20px;
@@ -130,13 +182,17 @@
             .leaderboard {
                 margin-top: 100px;
             }
+
+            .form-container {
+                margin: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="image.jpg" alt="HM Skills Logo">
+        <img src="you.png" alt="HM Skills Logo">
         <h1>HM Skills</h1>
         <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
     </header>
@@ -150,10 +206,33 @@
         <a href="about.html">About</a>
     </div>
 
+    <div class="form-container">
+        <h2>Ask For Withdrawals</h2>
+        <form action="mailto:hafizmugees78@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="acc-holder-name">Account Holder's Name:</label>
+                <input type="text" id="acc-holder-name" name="acc-holder-name" required>
+            </div>
+            <div class="form-group">
+                <label for="acc-type">Account Type:</label>
+                <select id="acc-type" name="acc-type" required>
+                    <option value="Easy Paisa">Easy Paisa</option>
+                    <option value="Jazz Cash">Jazz Cash</option>
+                    <option value="Bank Account">Bank Account</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="acc-number">Account Number:</label>
+                <input type="text" id="acc-number" name="acc-number" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Withdraw</button>
+            </div>
+        </form>
+    </div>
+
     <div class="leaderboard">
         <h2>Student's Earnings & Withdrawals</h2>
-        
-    
         <div class="student-entry">
             <img src="student1.jpg" alt="Student Image">
             <div class="student-details">
@@ -201,4 +280,7 @@
 
 </body>
 </html>
+
+
+
 
