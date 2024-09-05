@@ -16,36 +16,58 @@
             background-color: #f9f9f9;
         }
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+       header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-        header img {
-            width: 70px;
-            height: 70px;
-        }
+header img {
+    width: 70px;
+    height: 70px;
+}
 
-        header h1 {
-            margin-left: 15px;
-            color: purple;
-            font-size: 24px;
-        }
+header h1 {
+    margin-left: 15px;
+    color: purple;
+    font-size: 24px;
+    flex-grow: 1;
+    text-align: center;
+}
 
-        .menu-icon {
-            font-size: 40px;
-            cursor: pointer;
-            color: purple;
-        }
+.menu-icon {
+    font-size: 40px;
+    cursor: pointer;
+    color: purple;
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 29px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .menu-icon {
+        font-size: 35px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
 
         .sidebar {
             display: none;
