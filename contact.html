@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HM Skills</title>
+    <title>HM Skills Contact</title>
     <style>
         * {
             margin: 0;
@@ -14,49 +14,60 @@
 
         body {
             background-color: #f9f9f9;
+            padding: 20px;
+            margin: 0;
         }
 
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
+            padding: 15px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         header img {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: auto;
         }
 
         header h1 {
-            margin-left: 10px;
             color: purple;
             font-size: 24px;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
         }
 
         .menu-icon {
-            font-size: 30px;
+            font-size: 40px;
             cursor: pointer;
             color: purple;
+            margin-left: auto;
         }
 
         .sidebar {
             display: none;
-            position: absolute;
-            top: 60px;
+            position: fixed;
+            top: 80px;
             left: 0;
             width: 100%;
             background-color: #333;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
+            z-index: 999;
         }
 
         .sidebar a {
-            padding: 15px;
+            padding: 20px;
             text-decoration: none;
-            font-size: 18px;
-            color: #ffcc99; /* Light orange color */
+            font-size: 20px;
+            color: #ffcc99;
             display: block;
             text-align: center;
         }
@@ -66,44 +77,64 @@
         }
 
         .main-content {
-            margin-top: 20px;
+            margin-top: 100px;
             padding: 20px;
             text-align: center;
+        }
+
+        .sticker {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             font-size: 24px;
+            display: inline-block;
+            width: calc(100% - 40px);
+            transition: transform 0.2s;
+        }
+
+        .sticker:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+            transition: fill 0.2s;
+        }
+
+        .dark-purple {
+            fill: #5e4b8b; /* Dark purple */
+        }
+
+        .sticker:hover .icon {
+            fill: #ff7f50; /* Coral orange */
+        }
+
+        .header {
+            font-size: 30px;
             font-weight: bold;
-            color: lightblack;
+            margin-bottom: 20px;
+            color: darkorange;
         }
 
-        .section-content {
-            display: none;
-            padding: 20px;
-            text-align: center;
+        .message {
             font-size: 18px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 20px;
-            }
-
-            .menu-icon {
-                font-size: 25px;
-            }
-
-            .sidebar a {
-                font-size: 16px;
-            }
-
-            .main-content {
-                font-size: 20px;
-            }
+            color: #a9a9a9; /* Light grey */
+            font-weight: bold;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="your-image.png" alt="HM Skills Logo">
+        <img src="image.jpg" alt="HM Skills Logo">
         <h1>HM Skills</h1>
         <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
     </header>
@@ -117,8 +148,38 @@
         <a href="about.html">About</a>
     </div>
 
-    <div class="main-content" id="home">
-        Welcome to HM Skills
+    <div class="main-content">
+        <div class="header">Contact Us</div>
+        
+        <img src="https://via.placeholder.com/600x200" alt="Header Image">
+
+        <div class="message">
+            We are at your service, ready to provide guidance and support. Your satisfaction is our priority. Reach out to us for assistance anytime.
+        </div>
+
+        <!-- Email Sticker -->
+        <div class="sticker">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path class="dark-purple" d="M12 13.5l-11-7V5l11 7 11-7v1.5l-11 7zM0 9l12 8 12-8V19H0V9z"/>
+            </svg>
+            <span>Email: <strong>contacthmskills@gmail.com</strong></span>
+        </div>
+
+        <!-- Contact Sticker -->
+        <div class="sticker">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path class="dark-purple" d="M6.62 10.79c-.97 0-1.76.79-1.76 1.76 0 .97.79 1.76 1.76 1.76 1.53 0 2.76-1.23 2.76-2.76 0-.97-.79-1.76-1.76-1.76zm0 4.76c-1.1 0-2-.9-2-2 0-1.1.9-2 2-2s2 .9 2 2c0 1.1-.9 2-2 2zm11.09-5.18c-.97 0-1.76.79-1.76 1.76 0 .97.79 1.76 1.76 1.76 1.53 0 2.76-1.23 2.76-2.76 0-.97-.79-1.76-1.76-1.76zm0 4.76c-1.1 0-2-.9-2-2 0-1.1.9-2 2-2s2 .9 2 2c0 1.1-.9 2-2 2zM12 2C7.06 2 3 6.06 3 11c0 3.87 3.13 7 7 7 1.48 0 2.86-.48 4-1.29L21 22l1-1-6.29-6.29C16.52 13.86 17 12.48 17 11c0-4.94-4.06-9-9-9zm0 2c3.87 0 7 3.13 7 7 0 1.48-.48 2.86-1.29 4L12 13.59V10h-2V8h2V6h-2V4h2z"/>
+            </svg>
+            <span>Contact: <strong>03212161650</strong></span>
+        </div>
+
+        <!-- Location Sticker -->
+        <div class="sticker">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path class="dark-purple" d="M12 2C8.1 2 5 5.1 5 9c0 2.9 4 7 7 11 3-4 7-8.1 7-11 0-3.9-3.1-7-7-7zm0 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+            </svg>
+            <span>Location: <strong>Faisalabad Jhang Road, Moter Market, Punjab, Pakistan</strong></span>
+        </div>
     </div>
 
     <script>
