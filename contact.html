@@ -85,7 +85,7 @@
             text-align: center;
         }
 
-      .sticker {
+        .sticker {
             background-color: #ffffff;
             border-radius: 12px; /* Increased border radius */
             padding: 30px; /* Increased padding */
@@ -143,11 +143,23 @@
 
         @media (max-width: 768px) {
             .sticker {
-                font-size: 22px; /* Adjust font size for mobile */
+                font-size: 20px; /* Adjust font size for mobile */
+                padding: 20px; /* Adjust padding for mobile */
             }
 
             header h1 {
-                font-size: 22px; /* Adjust header font size for mobile */
+                font-size: 20px; /* Adjust header font size for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sticker {
+                font-size: 18px; /* Further reduce font size for very small screens */
+                padding: 15px; /* Further reduce padding for very small screens */
+            }
+
+            header h1 {
+                font-size: 18px; /* Further reduce header font size for very small screens */
             }
         }
     </style>
@@ -171,7 +183,8 @@
 
     <div class="main-content">
         <div class="header">Contact Us</div>
-           <img src="./img 8.jpg" alt="">
+        
+        <img src="https://via.placeholder.com/600x200" alt="Header Image">
 
         <div class="message">
             We are at your service, ready to provide guidance and support. Your satisfaction is our priority. Reach out to us for assistance anytime.
@@ -192,6 +205,7 @@
             </svg>
             <span>Contact: <strong>03212161650</strong></span>
         </div>
+
 
         <!-- Location Sticker -->
         <div class="sticker">
