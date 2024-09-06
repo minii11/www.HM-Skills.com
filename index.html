@@ -14,76 +14,52 @@
 
         body {
             background-color: #f9f9f9;
+            font-size: 16px;
         }
 
-      header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-header img {
-    width: 70px;
-    height: 70px;
-}
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-right: auto;
+        }
 
-header h1 {
-    margin-left: 15px;
-    color: purple;
-    font-size: 24px;
-    flex-grow: 1;
-    text-align: center;
-}
+        header h1 {
+            color: purple;
+            font-size: 24px;
+            text-align: center;
+            flex-grow: 1;
+        }
 
-.menu-icon {
-    font-size: 40px;
-    cursor: pointer;
-    color: purple;
-}
-
-@media (max-width: 768px) {
-    header {
-        justify-content: center;
-    }
-
-    header h1 {
-        font-size: 29px;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .menu-icon {
-        font-size: 35px;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
+        .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: purple;
+            margin-left: auto;
+        }
 
         .sidebar {
             display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
+            position: absolute;
+            top: 60px;
+            right: 0;
             width: 100%;
             background-color: #333;
             color: #ffcc99;
-            z-index: 999; /* Ensure sidebar stays above other content */
         }
 
         .sidebar a {
-            padding: 20px;
+            padding: 15px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             color: #ffcc99;
             display: block;
             text-align: center;
@@ -93,81 +69,83 @@ header h1 {
             background-color: #575757;
         }
 
-        .main-content {
-            margin-top: 100px;
+        .container {
             padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: lightblack;
+            max-width: 100%;
+            box-sizing: border-box;
+            background-color: #fff;
+            margin-top: 60px;
         }
 
-        .image-container {
-            width: 100vw;
-            overflow: hidden;
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: purple;
         }
 
-        .image-container img {
-            width: 100vw;
-            height: auto;
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
             display: block;
-            object-fit: cover;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: purple;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: purple;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #5a2d8b;
+        }
+
+        /* Ensure images are centered and fully visible on mobile devices */
+        img {
+            width: 100%;
+            height: 100vh;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 29px;
+                font-size: 20px;
             }
 
             .menu-icon {
-                font-size: 35px;
+                font-size: 25px;
             }
 
             .sidebar a {
-                font-size: 18px;
+                font-size: 16px;
             }
 
-            .main-content {
+            .container h2 {
                 font-size: 20px;
             }
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: #D8BFD8;
-            margin-top: 20px;
-            font-size: 0.6em;
-            border-bottom: 2px solid #D8BFD8;
-            padding-bottom: 5px;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #555;
-            margin: 10px 0;
-            font-size: 0.6em;
+            img {
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -263,10 +241,6 @@ header h1 {
 
 </body>
 </html>
-
-
-
-
 
 
 
