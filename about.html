@@ -5,70 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Skills</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-        }
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute items with space between them */
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-        header img {
-            width: 70px;
-            height: 70px;
-        }
+header img {
+    width: 70px;
+    height: auto;
+}
 
-        header h1 {
-            margin-left: 15px;
-            color: purple;
-            font-size: 24px;
-            flex-grow: 1;
-            text-align: center;
-        }
+header h1 {
+    color: purple;
+    font-size: 24px;
+    margin: 0; /* Remove default margin */
+    text-align: center;
+    flex-grow: 1; /* Allow h1 to take available space */
+}
 
-        .menu-icon {
-            font-size: 40px;
-            cursor: pointer;
-            color: purple;
-        }
+.menu-icon {
+    font-size: 40px;
+    cursor: pointer;
+    color: purple;
+    margin-left: auto; /* Push menu icon to the far right */
+    display: flex;
+    align-items: center; /* Center vertically */
+}
 
-        @media (max-width: 768px) {
-            header {
-                justify-content: center;
-            }
+@media (max-width: 768px) 
+        
+        {
+            header img {
+  width: 70px; /* Decreased width */
+  height: auto;
+}
 
-            header h1 {
-                font-size: 29px;
-                margin-left: 0;
-                text-align: center;
-            }
 
-            .menu-icon {
-                font-size: 35px;
-                position: absolute;
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-        }
+    header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Adjust alignment for mobile */
+    }
+    header {
+  ...
+  overflow: hidden; /* Prevent logo from overflowing header */
+}
+
+
+
+    header h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .menu-icon {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: center; /* Center header content horizontally */
+    }
+
+    header img {
+        position: absolute;
+        left: 15px;
+    }
+
+    header h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu-icon {
+        font-size: 35px;
+        right: 15px;
+    }
+}
+
 
         .sidebar {
             display: none;
