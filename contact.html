@@ -55,12 +55,12 @@
         .sidebar {
             display: none;
             position: fixed;
-            top: 80px;
+            top: 110px; /* Positioned below the header */
             left: 0;
             width: 100%;
             background-color: #333;
             color: #ffcc99;
-            z-index: 999;
+            z-index: 1100;
         }
 
         .sidebar a {
@@ -77,7 +77,7 @@
         }
 
         .main-content {
-            margin-top: 100px;
+            margin-top: 100px; /* Ensure content starts below the header */
             padding: 20px;
             text-align: center;
         }
@@ -86,11 +86,12 @@
             background-color: #ffffff;
             border-radius: 10px;
             padding: 20px;
-            margin: 15px 0;
+            margin: 15px auto;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             font-size: 24px;
             display: inline-block;
             width: calc(100% - 40px);
+            max-width: 600px; /* Set max width for larger screens */
             transition: transform 0.2s;
         }
 
@@ -120,7 +121,7 @@
             font-size: 30px;
             font-weight: bold;
             margin-bottom: 20px;
-            color: darkorange;
+            color: #5e4b8b;
         }
 
         .message {
@@ -128,6 +129,23 @@
             color: #a9a9a9; /* Light grey */
             font-weight: bold;
             margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .sticker {
+                font-size: 20px; /* Adjust font size for mobile */
+            }
+
+            header h1 {
+                font-size: 20px; /* Adjust header font size for mobile */
+            }
         }
     </style>
 </head>
@@ -151,7 +169,8 @@
     <div class="main-content">
         <div class="header">Contact Us</div>
         
-       <img src="./img 8.jpg" alt="">
+        <img src="https://via.placeholder.com/600x200" alt="Header Image">
+
         <div class="message">
             We are at your service, ready to provide guidance and support. Your satisfaction is our priority. Reach out to us for assistance anytime.
         </div>
@@ -184,11 +203,7 @@
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
-            if (sidebar.style.display === "block") {
-                sidebar.style.display = "none";
-            } else {
-                sidebar.style.display = "block";
-            }
+            sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
         }
     </script>
 
