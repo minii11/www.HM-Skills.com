@@ -6,50 +6,92 @@
     <title>HM Skills</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background-color: #f9f9f9;
-            text-align: center; /* Center all text */
-            font-size: 16px;
-        }
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute items with space between them */
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-        header img {
-            width: 50px;
-            height: 50px;
-            margin-right: auto;
-        }
+header img {
+    width: 70px;
+    height: auto;
+}
 
-        header h1 {
-            color: purple;
-            font-size: 24px;
-            flex-grow: 1;
-        }
+header h1 {
+    color: purple;
+    font-size: 24px;
+    margin: 0; /* Remove default margin */
+    text-align: center;
+    flex-grow: 1; /* Allow h1 to take available space */
+}
 
-        .menu-icon {
-            font-size: 30px;
-            cursor: pointer;
-            color: purple;
-            margin-left: auto;
-        }
+.menu-icon {
+    font-size: 40px;
+    cursor: pointer;
+    color: purple;
+    margin-left: auto; /* Push menu icon to the far right */
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Adjust alignment for mobile */
+    }
+
+    header h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .menu-icon {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: center; /* Center header content horizontally */
+    }
+
+    header img {
+        position: absolute;
+        left: 15px;
+    }
+
+    header h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu-icon {
+        font-size: 35px;
+        right: 15px;
+    }
+}
 
         .sidebar {
             display: none;
