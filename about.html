@@ -14,49 +14,78 @@
 
         body {
             background-color: #f9f9f9;
+            color: #333;
         }
 
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
+            padding: 15px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         header img {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
         }
 
         header h1 {
-            margin-left: 10px;
+            margin-left: 15px;
             color: purple;
             font-size: 24px;
+            flex-grow: 1;
+            text-align: center;
         }
 
         .menu-icon {
-            font-size: 30px;
+            font-size: 40px;
             cursor: pointer;
             color: purple;
         }
 
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+            }
+
+            header h1 {
+                font-size: 29px;
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .menu-icon {
+                font-size: 35px;
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
         .sidebar {
             display: none;
-            position: absolute;
-            top: 60px;
+            position: fixed;
+            top: 80px;
             left: 0;
             width: 100%;
             background-color: #333;
-            color: #ffcc99; /* Light orange color */
+            color: #ffcc99;
+            z-index: 999;
         }
 
         .sidebar a {
-            padding: 15px;
+            padding: 20px;
             text-decoration: none;
-            font-size: 18px;
-            color: #ffcc99; /* Light orange color */
+            font-size: 20px;
+            color: #ffcc99;
             display: block;
             text-align: center;
         }
@@ -66,36 +95,116 @@
         }
 
         .main-content {
-            margin-top: 20px;
+            margin-top: 100px;
             padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            color: lightblack;
+            color: #4b0082;
         }
 
-        .section-content {
-            display: none;
+        .section-title {
+            font-size: 32px;
+            color: #ff4500;
+            margin-bottom: 20px;
+        }
+
+        .about-section, .courses-section, .footer {
+            background-color: #fff;
             padding: 20px;
-            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2, .courses-section h2 {
+            color: #D8BFD8;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .about-section p, .courses-section p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .course-title {
+            color: #4b0082;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .course-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .courses-info {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: left;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .courses-info h2 {
+            color: #ff4500;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .courses-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .courses-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .courses-info ul li {
+            margin-bottom: 15px;
+        }
+
+        .courses-info strong {
+            color: #4b0082;
             font-size: 18px;
         }
 
+        .footer {
+            background-color: #333;
+            color: #ffcc99;
+            text-align: center;
+            padding: 15px;
+        }
+
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 20px;
-            }
-
-            .menu-icon {
-                font-size: 25px;
-            }
-
-            .sidebar a {
-                font-size: 16px;
-            }
-
             .main-content {
                 font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .about-section h2, .courses-section h2 {
+                font-size: 20px;
+            }
+
+            .course-title {
+                font-size: 18px;
+            }
+
+            .footer {
+                font-size: 14px;
             }
         }
     </style>
@@ -103,7 +212,7 @@
 <body>
 
     <header>
-        <img src="your-image.png" alt="HM Skills Logo">
+        <img src="image.jpg" alt="HM Skills Logo">
         <h1>HM Skills</h1>
         <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
     </header>
@@ -117,18 +226,58 @@
         <a href="about.html">About</a>
     </div>
 
-    <div class="main-content" id="home">
-        Welcome to HM Skills
+    <div class="main-content">
+        <div class="about-section">
+            <h2 class="section-title">About Us</h2>
+            <img src="about-image.jpg" alt="About Us Image" class="course-image">
+            <p>HM-Skills epitomizes excellence and success in the digital education landscape. Our platform offers meticulously curated courses led by industry luminaries to refine your digital marketing and content creation acumen. Grounded in practicality and real-world applications, HM-Skills is your steadfast partner on the journey to triumph in the ever-evolving online domain. Embrace the opportunity to thrive and excel with us by your side. Trust HM-Skills to be your unwavering ally on the path to achieving your online aspirations with authenticity and unparalleled professionalism.</p>
+        </div>
+
+        <div class="courses-info">
+            <h2>Exciting Opportunities Await!</h2>
+            <p>With just your mobile 📲 and an internet connection, you can unlock a world of knowledge and skills. For a mere RS 1200, you'll gain access to 5 game-changing courses:</p>
+            <ul>
+                <li><strong>Adsterra & Blogger:</strong> Dive into the secrets of making money through Adsterra and Blogger. From ad strategies to content creation, this course will show you how to maximize your earnings.</li>
+                <li><strong>YouTube Monetize:</strong> Learn how to turn your YouTube channel into a cash cow with top-notch monetization techniques.</li>
+                <li><strong>Cap Cut:</strong> Master the art of video editing with Cap Cut, creating visuals that will wow your audience.</li>
+                <li><strong>Affiliate Marketing:</strong> Get the scoop on affiliate marketing and how to boost your income by promoting products effectively.</li>
+                <li><strong>TikTok Marketing:</strong> Explore the world of TikTok marketing and learn how to use the platform to elevate your brand and connect with your followers.</li>
+            </ul>
+            <p>Get ready to level up your digital skills and open doors to new earning potentials. Enroll now at HM Skills and let's kickstart your journey to success! 🌟💸</p>
+        </div>
+
+        <div class="courses-section">
+            <h2 class="section-title">Our Courses</h2>
+
+            <img src="course1.jpg" alt="Adsterra & Blogger" class="course-image">
+            <p class="course-title">Adsterra & Blogger</p>
+            <p>In the course Adsterra & Blogger, you will learn how to create an account and earn from it. The course will guide you on running ads, where to get them from, and how to run them. Moreover, you will learn about writing articles, adding pictures, and the strategy for effective content creation to maximize your earnings. Exciting skills await you in this course!</p>
+
+            <img src="course2.jpg" alt="YouTube Monetize" class="course-image">
+            <p class="course-title">YouTube Monetize</p>
+            <p>The YouTube Monetize course will teach you the ins and outs of earning through YouTube. From creating engaging content to optimizing your videos for monetization, this course will equip you with the knowledge to turn your passion into a profitable venture. Get ready to unlock the secrets of YouTube success!</p>
+
+            <img src="course3.jpg" alt="Cap Cut" class="course-image">
+            <p class="course-title">Cap Cut</p>
+            <p>In Cap Cut, discover the art of video editing and storytelling. This course will take you through the process of creating captivating videos using Cap Cut software. Learn to enhance your videos, add effects, and master the techniques to produce professional-looking content. Unleash your creativity and elevate your video editing skills with this course!</p>
+
+            <img src="course4.jpg" alt="Affiliate Marketing" class="course-image">
+            <p class="course-title">Affiliate Marketing</p>
+            <p>Explore the world of Affiliate Marketing and uncover the strategies to generate passive income. This course will delve into the fundamentals of affiliate marketing, from selecting the right products to promoting them effectively. Gain insights into building successful affiliate partnerships and maximizing your earnings.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>HM Skills</strong></p>
+        <p>You're guaranteed top-notch training from industry-leading educators.</p>
+        <p>Transform your aspirations into reality with our expert instructors at the helm of your learning journey.</p>
+        <p>Contact: <a href="https://wa.me/923212161650" style="color: #ffcc99;">Chat on WhatsApp</a></p> 
     </div>
 
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
-            if (sidebar.style.display === "block") {
-                sidebar.style.display = "none";
-            } else {
-                sidebar.style.display = "block";
-            }
+            sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
         }
     </script>
 
