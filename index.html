@@ -21,8 +21,8 @@ body {
 
 header {
     display: flex;
-    align-items: center;
-    justify-content: center; /* Center contents horizontally */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute items with space between them */
     padding: 15px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -36,26 +36,38 @@ header {
 header img {
     width: 70px;
     height: auto;
-    max-width: 100%;
-    position: absolute; /* Position logo absolutely for proper alignment */
-    left: 15px;
 }
 
 header h1 {
     color: purple;
     font-size: 24px;
-    margin-left: auto; /* Pushes the header name to the right */
-    margin-right: auto; /* Centers the header name horizontally */
+    margin: 0; /* Remove default margin */
+    text-align: center;
+    flex-grow: 1; /* Allow h1 to take available space */
 }
 
 .menu-icon {
     font-size: 40px;
     cursor: pointer;
     color: purple;
-    position: absolute; /* Position menu icon absolutely */
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: auto; /* Push menu icon to the far right */
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Adjust alignment for mobile */
+    }
+
+    header h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .menu-icon {
+        font-size: 35px;
+    }
 }
 
 @media (max-width: 768px) {
