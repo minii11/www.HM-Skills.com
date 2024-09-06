@@ -3,39 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to HM Skills</title>
+    <title>Welcome to Courses Portal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f9f9f9;
-            color: black;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
+            color: darkmagenta;
+            text-align: center;
+        }
+
+        .header {
+            color: darkpurple;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
         }
 
         .welcome-message {
-            margin-top: 50px;
-            font-size: 36px;
+            background-color: lightgrey;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
             font-weight: bold;
-            color: purple;
+            color: black;
         }
 
-        .welcome-message img {
-            width: 200px;
-            height: auto;
-            margin-top: 20px;
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
         }
+
+        .course {
+            position: relative;
+            width: 200px;
+            margin: 10px;
+            border: 2px solid orange;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .course img {
+            width: 100%;
+            height: auto;
+        }
+
+        .course-title {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: darkpurple;
+            font-weight: bold;
+        }
+
+        .course-name {
+            font-weight: bold;
+            margin: 10px 0;
+            color: black;
+        }
+
+        .start-button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .start-button:hover {
+            background-color: darkorange;
+        }
+
+        .lecture-buttons {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .lecture-button {
+            background-color: lightpurple;
+            color: black;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        .lecture-button:hover {
+            background-color: purple;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
 
+    <div class="header">Welcome to Courses Portal!</div>
+
     <div class="welcome-message">
-        <h1>Welcome Student! :> </h1>
-        <p>Congratulations! You have successfully accessed the Courses Portal.</p>
-        <img src="img success.jpg" alt="Welcome Image">
+        Congrats Champ! 🌟<br>
+        You've got the keys to the courses portal now – that's awesome! 🔓 This is your golden ticket to a world of knowledge and growth. Embrace this opportunity with open arms because you now have the power to shape your future and transform your life for the better. 🌈<br><br>
+        Remember, every course you take, every assignment you conquer, and every bit of knowledge you absorb is a stepping stone towards a brighter tomorrow. Stay focused, stay hungry for learning, and most importantly, believe in yourself. You have the potential to achieve great things, so seize this moment and let your determination drive you towards success. 💪<br><br>
+        It's not just about gaining knowledge; it's about evolving into the best version of yourself. So, dive into those courses with enthusiasm, ask questions, seek understanding, and never underestimate the impact your dedication can have on your life's trajectory. You've got this! 📚✨
     </div>
+
+    <div class="course-container">
+        <div class="course">
+            <img src="course1.jpg" alt="ADSTERRA EARNING COURSE">
+            <div class="course-title">Course #1</div>
+            <div class="course-name">ADSTERRA EARNING COURSE</div>
+            <button class="start-button" onclick="toggleLectures(this)">Start Course</button>
+            <div class="lecture-buttons">
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 1</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 2</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 3</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="course2.jpg" alt="YOUTUBE MASTERY (BASIC COURSE)">
+            <div class="course-title">Course #2</div>
+            <div class="course-name">YOUTUBE MASTERY (BASIC COURSE)</div>
+            <button class="start-button" onclick="toggleLectures(this)">Start Course</button>
+            <div class="lecture-buttons">
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 1</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 2</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 3</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="course3.jpg" alt="CAPCUT MOBILE VIDEO EDITING">
+            <div class="course-title">Course #3</div>
+            <div class="course-name">CAPCUT MOBILE VIDEO EDITING</div>
+            <button class="start-button" onclick="toggleLectures(this)">Start Course</button>
+            <div class="lecture-buttons">
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 1</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 2</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 3</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="course4.jpg" alt="HM SKILLS AFFILIATE MARKETING [FREE COURSE]">
+            <div class="course-title">Course #4</div>
+            <div class="course-name">HM SKILLS AFFILIATE MARKETING [FREE COURSE]</div>
+            <button class="start-button" onclick="toggleLectures(this)">Start Course</button>
+            <div class="lecture-buttons">
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 1</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 2</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 3</button>
+            </div>
+        </div>
+
+        <div class="course">
+            <img src="course5.jpg" alt="TIKTOK MARKETING COURSE">
+            <div class="course-title">Course #5</div>
+            <div class="course-name">TIKTOK MARKETING COURSE</div>
+            <button class="start-button" onclick="toggleLectures(this)">Start Course</button>
+            <div class="lecture-buttons">
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 1</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 2</button>
+                <button class="lecture-button" onclick="openLink('https://drive.google.com/file/d/1de07yIJ54YNTgMpcnqCALnsHvZW8YJ3s/view?usp=drivesdk')">Lecture 3</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLectures(button) {
+            const lectures = button.nextElementSibling;
+            lectures.style.display = lectures.style.display === "flex" ? "none" : "flex";
+        }
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
 
 </body>
 </html>
-
