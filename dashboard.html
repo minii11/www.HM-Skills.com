@@ -165,22 +165,31 @@ header h1 {
             margin-right: 15px;
         }
 
+        @media (max-width: 768px) 
+    .leaderboard .student-entry {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Add space between items */
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+    }
+
        
         .leaderboard .student-details {
             color: #333;
             width: 100%; /* Ensure student details take full width */
+            font-size: 14px;
         }
 
 
         .leaderboard .student-details h3 {
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: whitesmoke; /* Dark purple for the student names */
+            
         }
 
         .leaderboard .student-details p {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             font-size: 16px;
             font-weight: bold; /* Slightly bold for better visibility */
             background-color: #E2BEF1; /* Light background for separation */
