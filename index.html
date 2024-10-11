@@ -3,295 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HM Skills</title>
-   <meta property="og:title" content="HM Skills">
-    <meta property="og:description" content="Step into the world of HM Skills, where learning meets earning in perfect harmony!">
-    <meta property="og:image" content="https://minii11.github.io/www.HM-Skills.com/image.jpg"> <!-- Update with the correct URL -->
-    <meta property="og:url" content="https://minii11.github.io/www.HM-Skills.com/">
+    <title>Saudi Bilnadin</title>
+    <meta property="og:title" content="HM Skills">
+     <meta property="og:description" content="Your Trusted Partner in Visa Processing!">
+     <meta property="og:image" content="https://minii11.github.io/www.SaudiBilnadin.com/image sa.jpg"> <!-- Update with the correct URL -->
+     <meta property="og:url" content="https://minii11.github.io/www.HM-Skills.com/">
     <style>
-      * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
 
-body {
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
+        .header {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
 
-header {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Distribute items with space between them */
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
+        .menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: auto; /* Adjust width based on content */
+            padding: 15px;
+            background-color: black;
+            color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-header img {
-    width: 70px;
-    height: auto;
-}
+        .menu.visible {
+            display: block;
+            opacity: 1;
+        }
 
-header h1 {
-    color: purple;
-    font-size: 24px;
-    margin: 0; /* Remove default margin */
-    text-align: center;
-    flex-grow: 1; /* Allow h1 to take available space */
-}
+        .menu-button {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid white; /* White outline */
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
 
-.menu-icon {
-    font-size: 40px;
-    cursor: pointer;
-    color: purple;
-    margin-left: auto; /* Push menu icon to the far right */
-    display: flex;
-    align-items: center; /* Center vertically */
-}
+        .menu-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: row; /* Align items in a row */
-        justify-content: space-between; /* Adjust alignment for mobile */
-    }
+        .close-button {
+            margin-top: 20px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-    header h1 {
-        font-size: 20px; /* Adjust font size for smaller screens */
-    }
+        img {
+            width: 100%;
+            height: auto;
+        }
 
-    .menu-icon {
-        font-size: 35px;
-    }
-}
+        .info-box {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: row; /* Align items in a row */
-        justify-content: center; /* Center header content horizontally */
-    }
+        .search-bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
 
-    header img {
-        position: absolute;
-        left: 15px;
-    }
+        .search-bar-container input {
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            outline: none;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
 
-    header h1 {
-        font-size: 20px; /* Adjust font size for smaller screens */
-        margin-left: auto;
-        margin-right: auto;
-    }
+        .search-bar-container button {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    .menu-icon {
-        font-size: 35px;
-        right: 15px;
-    }
-}
+        .search-bar-container button:hover {
+            background-color: darkgrey;
+        }
 
-.sidebar {
-    display: none;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #ffcc99;
-    z-index: 999;
-}
+        #error-message {
+            color: red;
+            display: none;
+        }
 
-.sidebar a {
-    padding: 20px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #ffcc99;
-    display: block;
-    text-align: center;
-}
+        @media (max-width: 600px) {
+            .menu {
+                width: 100%; /* Full width on mobile */
+            }
 
-.sidebar a:hover {
-    background-color: #575757;
-}
+            .info-box {
+                font-size: 14px;
+            }
 
-.main-content {
-    margin-top: 100px;
-    padding: 20px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: lightblack;
-}
-
-.image-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .main-content {
-        font-size: 20px;
-    }
-
-    .sidebar a {
-        font-size: 18px;
-    }
-}
-
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #D8BFD8;
-    margin-top: 20px;
-    font-size: 0.6em;
-    border-bottom: 2px solid #D8BFD8;
-    padding-bottom: 5px;
-}
-
-p {
-    line-height: 1.6;
-    color: #555;
-    margin: 10px 0;
-    font-size: 0.6em;
-}
-
+            .search-bar-container input, .search-bar-container button {
+                width: 95%;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <header>
-        <img src="image.jpg" alt="HM Skills Logo">
-        <h1>HM Skills</h1>
-        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+    <header class="header">
+        <div class="menu-icon" onclick="toggleMenu()">Menu</div>
     </header>
-
-    <div class="sidebar" id="sidebar">
-        <a href="index.html">Home</a>
-        <a href="signup.html">Sign Up</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="about.html">About</a>
+    <div id="menu" class="menu">
+        <a href="home.html" class="menu-button">Home</a>
+        <a href="about.html" class="menu-button">About</a>
+        <a href="services.html" class="menu-button">Services</a>
+        <a href="contact.html" class="menu-button">Contact</a>
+        <div class="close-button" onclick="toggleMenu()">Close</div>
     </div>
 
-    <div class="main-content" id="home">
-        Welcome to HM Skills
-        <br>
-        <br>
-        <div class="image-container">
-            <img src="./img 2.jpg" alt="">
-        </div>
+    <div>
+        <img src="./img 0.jpg" alt="Header Image">
+    </div>
 
-        <p style="font-size: 0.8em; line-height: 1.8; color: #4b0082; text-align: center; font-family: 'Georgia', serif;">
-            ⭐ <strong>Step into the world of <span style="color: #ff4500;">HM Skills</span>, where learning meets earning in perfect harmony!</strong> 📈 
-            <br><br>
-            <span style="font-style: calibar;">Elevate your abilities with our premium courses, unlock new opportunities, and watch your income flourish. 💼</span>
-            <br><br>
-            Join us on this transformative journey of <strong>skill enhancement & financial success 🏆💰</strong>.
-            <br><br>
-            <strong>Let's make your dreams a reality with <span style="color: #ff4500;">HM Skills</span>!</strong> ✨
+    <div class="info-box">
+        Kindly Click on the top right corner "Menu" to get more information about us
+    </div>
+
+    <div>
+        <img src="./img 1.jpg" alt="Content Image">
+    </div>
+
+    <div class="search-bar-container">
+        <input type="text" id="visaNumber" placeholder="TYPE YOUR VISA APPLICATION NUMBER">
+        <button onclick="checkVisaNumber()">Check Status</button>
+        <p id="error-message">Not Valid! You have entered a wrong Passport number! Kindly recheck and try again!</p>
+    </div>
+
+    <div>
+        <img src="./img 2.jpg" alt="Another Image">
+    </div>
+
+    <section class="visa-info-section" style="background: black; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); margin: 20px; font-family: 'Arial', sans-serif; text-align: center;">
+        <h1 style="color: white; font-size: 1em; margin-bottom: 15px; text-shadow: 0 0 10px white;">Visa Approval Services</h1>
+        <h2 style="color: lightgrey; font-size: 0.9em; margin-bottom: 10px; text-shadow: 0 0 10px white;">Your Gateway to a New Life in Saudi Arabia</h2>
+        
+        <p style="color: #ddd; font-size: 0.8em; line-height: 1.5; margin: 10px 0; text-shadow: 0 0 10px white;">
+            At Saudi Bilnadin, we simplify your journey to Saudi Arabia by providing expert guidance and support throughout the visa application process.
         </p>
-
-        <div class="image-container">
-            <img src="./img 1.jpg" alt="">
-        </div>
-        
-
-        <h1>Plan for student's Earning</h1>
-        
-        <h2>1. Get Ads from Adsterra</h2>
-        <p>We'll get cool ads from Adsterra for your blog on Blogger.</p>
-        
-        <h2>2. Write Awesome Articles</h2>
-        <p>Then, you'll write awesome articles with those ads on your blog.</p>
-        
-        <h2>3. Share on TikTok</h2>
-        <p>After that, you can share your fun vlogs and movies on TikTok and ask people to click on a link to see ads and earn money.</p>
-        
-        <h2>4. Create a YouTube Channel</h2>
-        <p>Next, you'll create a YouTube channel and upload cool videos. If your videos are great, they can get popular and make you money through YouTube.</p>
-        
-        <h2>5. Learn Video Editing</h2>
-        <p>You'll learn to edit videos using CapCut, make fantastic videos, and upload them on TikTok or YouTube to earn money.</p>
-        
-        <h2>6. Affiliate Marketing</h2>
-        <p>In Affiliate Marketing, you'll sell a course and earn RS 900 for each sale you make.</p>
-        
-        <h2>7. Double Earnings on TikTok</h2>
-        <p>By sharing your vlogs and movies on TikTok, you can earn money from Adsterra. Also, by selling your course on TikTok, you can earn money through HM Skills.</p>
-        
-        <br>
-                <div class="image-container">
-            <img src="./img 6.jpg" alt="">
-        </div>
-
-        <strong>Exciting times ahead for you!</strong>
-        <br>
-        
-    </div>
-<br>
-    <div style="text-align: center;">
-        <strong>At HM Skills,</strong>
-        <br><p>You're guaranteed top-notch training from industry-leading educators.</p>
-        <br><p>Transform your aspirations into reality with our expert instructors at the helm of your learning journey.</p>
-        <br><p>Witness your dreams materialize under the tutelage of LedasGuru's exceptional instructors.</p>    
-        <div class="image-container">
-            <img src="./img 111.jpg" alt="">
-        </div>
-        <strong>Mugees</strong>
-        <strong>President</strong>
-        <p>HM-skills</p>
-        <p>Contact:<a href="https://wa.me/923212161650">Chat on WhatsApp</a></p> 
-        <h1 style="color: orange; font-size: 6vw;">Upskilling Courses</h1>
-<p style="color: black; font-weight: bold; font-size: 4vw;">With our exclusive courses, now you can acquire the best knowledge and expertise from our experienced trainers. We believe you can master the art of digital entrepreneurship through our industry-leading courses.</p>
-   <div class="image-container">
-            <img src="./img 3.jpg" alt="">
-        </div>
-    </div>
     
+        <div style="border: 2px solid white; border-radius: 8px; margin: 20px 0; padding: 15px; background: rgba(50, 50, 50, 0.8); box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+            <h3 style="color: white; font-size: 0.9em; margin-bottom: 10px; text-shadow: 0 0 10px white;">Why Choose Saudi Bilnadin?</h3>
+            <ul style="color: #ddd; font-size: 0.8em; padding-left: 20px; line-height: 1.5;">
+                <li>Expert guidance through the visa application process.</li>
+                <li>Fast and efficient service to ensure quick approvals.</li>
+                <li>Comprehensive support for families and individuals.</li>
+                <li>Transparent communication and updates on your application status.</li>
+            </ul>
+        </div>
+
+        <section class="visa-status-section" style="background: linear-gradient(to bottom, #2c2c2c, #ffffff); padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); margin: 20px; font-family: 'Arial', sans-serif; text-align: center;">
+            <h2 style="color: white; font-size: 1.8em; margin-bottom: 20px; text-shadow: 0 0 10px white;">How to Check Your Visa Status</h2>
+        
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; max-width: 800px; margin: auto;">
+                
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; align-items: center; color: white; font-size: 1.2em;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/airplane-take-off.png" style="margin-right: 10px;" alt="Airplane Icon"/>
+                        Visit the Visa Status Page
+                    </div>
+                    <p style="color: #ddd; font-size: 0.9em; line-height: 1.5;">Navigate to the visa status checking page on our website.</p>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; align-items: center; color: white; font-size: 1.2em;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/search.png" style="margin-right: 10px;" alt="Search Icon"/>
+                        Enter Your Visa Application Number
+                    </div>
+                    <p style="color: #ddd; font-size: 0.9em; line-height: 1.5;">In the designated field, enter your Visa Application Number. This unique identifier is essential for tracking your application status.</p>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; align-items: center; color: white; font-size: 1.2em;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/checkmark.png" style="margin-right: 10px;" alt="Check Icon"/>
+                        Submit Your Request
+                    </div>
+                    <p style="color: #ddd; font-size: 0.9em; line-height: 1.5;">Click the "Check Status" button to submit your request. The system will retrieve your visa application status.</p>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; align-items: center; color: white; font-size: 1.2em;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" style="margin-right: 10px;" alt="Visibility Icon"/>
+                        View Your Status
+                    </div>
+                    <p style="color: #ddd; font-size: 0.9em; line-height: 1.5;">Your current visa status will be displayed on the screen. Possible statuses include "In Process," "Approved," or "Rejected."</p>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; align-items: center; color: white; font-size: 1.2em;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/help.png" style="margin-right: 10px;" alt="Help Icon"/>
+                        What to Do If You Cannot Find Your Visa Status
+                    </div>
+                    <p style="color: #ddd; font-size: 0.9em; line-height: 1.5;">
+                        <strong>Check Your Input:</strong> Ensure that the Visa Application Number you entered is correct.<br>
+                        <strong>Wait for Processing:</strong> If your application was submitted recently, it may not yet be processed.<br>
+                        <strong>Contact Support:</strong> Reach out to our customer support team for assistance.
+                    </p>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; align-items: center; color: white; font-size: 1.2em;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/document.png" style="margin-right: 10px;" alt="Document Icon"/>
+                        If Your Visa Is Approved
+                    </div>
+                    <p style="color: #ddd; font-size: 0.9em; line-height: 1.5;">
+                        <strong>Access Your Document:</strong> If your visa application is approved, you will see a notification on the status page.<br>
+                        <strong>Further Instructions:</strong> An email will be sent with additional instructions on how to proceed.
+                    </p>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; align-items: center; color: white; font-size: 1.2em;">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" style="margin-right: 10px;" alt="Info Icon"/>
+                        Additional Information
+                    </div>
+                    <p style="color: #ddd; font-size: 0.9em; line-height: 1.5;">
+                        <strong>Processing Times:</strong> Visa processing times can vary based on the type of visa.<br>
+                        <strong>Data Security:</strong> Your personal information is secure and encrypted.<br>
+                        <strong>Next Steps After a Decision:</strong> If rejected, you will receive reasons and details on how to appeal.
+                    </p>
+                </div>
+        
+            </div>
+        </section>
+    
+        <div style="border: 2px solid white; border-radius: 8px; margin: 20px 0; padding: 15px; background: rgba(50, 50, 50, 0.8); box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+            <h3 style="color: white; font-size: 0.9em; margin-bottom: 10px; text-shadow: 0 0 10px white;">Our Commitment to You</h3>
+            <p style="color: #ddd; font-size: 0.8em; line-height: 1.5; text-shadow: 0 0 10px white;">
+                We are committed to making your visa application process as seamless as possible. From start to finish, our team is here to support you.
+            </p>
+        </div>
+
+        <section class="reviews-section" style="background: black; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); margin: 20px; font-family: 'Arial', sans-serif; text-align: center;">
+            <h2 style="color: white; font-size: 1.5em; margin-bottom: 20px; text-shadow: 0 0 10px white;">What Our Clients Say</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 600px; margin: auto;">
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Rajesh Kumar" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Rajesh Kumar - Seamless Experience</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"The process was incredibly smooth. They guided me through every step, and I received my visa within a week. I felt supported throughout the journey."</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="Anita Sharma" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Anita Sharma - Family Reunification</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"Saudi Bilnadin made it easy. They handled everything efficiently, and my husband was with me in no time. I can't thank them enough!"</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Vikram Singh" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Vikram Singh - Quick and Reliable</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"I applied for my visa, and within days, I had it in hand. Their team was professional and responsive. I highly recommend their services!"</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Priya Mehta" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Priya Mehta - Professional Guidance</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"They were patient and answered all my questions. I felt confident in their expertise, and my visa was approved without any issues."</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="Amit Verma" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Amit Verma - Stress-Free Process</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"The process was stress-free, and I received my visa faster than I expected. I felt like I was in good hands."</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/women/15.jpg" alt="Neha Gupta" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Neha Gupta - Exceptional Customer Service</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"Their team was friendly and knowledgeable, making the entire visa application process a breeze."</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/men/16.jpg" alt="Suresh Reddy" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Suresh Reddy - Transparent Process</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"Saudi Bilnadin kept me informed at every stage. I felt secure knowing I was working with a trustworthy company."</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+        
+                <div style="background: rgba(50, 50, 50, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+                    <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Deepika Joshi" style="border-radius: 50%; width: 80px; height: 80px; margin-bottom: 10px;">
+                    <div style="color: white; font-size: 1em; margin-bottom: 5px; text-shadow: 0 0 10px white;">Deepika Joshi - A Lifesaver</div>
+                    <div style="color: #ddd; font-size: 0.85em; line-height: 1.5;">"They made everything clear and straightforward. I got my visa quickly, and I’m now happily working in Saudi Arabia!"</div>
+                    <div style="color: gold; font-size: 1.2em; text-shadow: 0 0 10px gold; margin-top: 10px;">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span style="color: grey;">★</span>
+                        <span style="color: grey;">★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div style="border: 2px solid white; border-radius: 8px; margin: 20px 0; padding: 15px; background: rgba(50, 50, 50, 0.8); box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);">
+            <h3 style="color: white; font-size: 0.9em; margin-bottom: 10px; text-shadow: 0 0 10px white;">Get Started Today!</h3>
+            <p style="color: #ddd; font-size: 0.8em; line-height: 1.5; text-shadow: 0 0 10px white;">
+                Let us help you take the next step toward your new life in Saudi Arabia. Contact us for more information about our services!
+            </p>
+        </div>
+
+    </section>
+
+    <div>
+        <img src="./img 3.jpg" alt="Final Image">
+    </div>
+
+
 
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            if (sidebar.style.display === "block") {
-                sidebar.style.display = "none";
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('visible')) {
+                menu.classList.remove('visible');
+                setTimeout(() => {
+                    menu.style.display = 'none';
+                }, 500); // Wait for the transition to finish
             } else {
-                sidebar.style.display = "block";
+                menu.style.display = 'block';
+                setTimeout(() => {
+                    menu.classList.add('visible');
+                }, 10); // Allow display to take effect
+            }
+        }
+
+        function checkVisaNumber() {
+            var visaNumber = document.getElementById('visaNumber').value;
+            if (visaNumber === 'Y2219245') {
+                window.location.href = 'visa-status.html';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
             }
         }
     </script>
-
 </body>
 </html>
-
-    
 
